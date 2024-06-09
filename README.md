@@ -17,6 +17,24 @@ Dados a nível de município e ano
 
 Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
 
+## GISAID (Sequências Genômicas)
+
+Calcular a menor distância entre duas cidades: uma que apresentou detecção de um sorotipo e outra que não. (o quão provável é que os casos desse município tenham sido por causa desse sorotipo/genótipo?). Haverá uma coluna para cada sorotipo/genótipo de interesse para cada mês passado.
+
+### Metadados de genótipo/local/data de coleta
+
+**OBS:** parece que não há como automatizar essa parte sem usar webscrap
+
+Manter o seguinte nome ```dengue_brasil_sorotipo_genotipo.tsv```
+
+### Matriz de distância rodoviária entre as cidades do brasil
+
+https://zenodo.org/records/11400243
+
+### Código IBGE municípios
+
+https://www.ibge.gov.br/explica/codigos-dos-municipios.php
+
 # Dados a serem coletados
 
 ## SIH (Hospitalizações)
@@ -32,6 +50,20 @@ Dados a nível de alguns municípios e por hora
 
 https://portal.inmet.gov.br/dadoshistoricos
 https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
+
+## E-SUS VE (Vigilância Epidemiológica)
+
+## Instituto Evandro Chagas (Genótipos/Sorotipos)
+
+## Instituto Adolfo Lutz (Genótipos/Sorotipos)
+
+## GenBank (Sequências Genéticas)
+
+## Fiocruz (Vigilância Genômica)
+
+## LACENs (Análise de Amostras Virais)
+
+## Redes Sociais (Sentimento Público)
 
 ## LIRAa (Infestação)
 
@@ -49,7 +81,7 @@ https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
 ## PNAD (Condições de Vida)
 
-## Redes Sociais (Sentimento Público)
+
 
 ## Faturamento por município
 
@@ -59,19 +91,6 @@ https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
 ## SISAB (Atenção Básica)
 
-## E-SUS VE (Vigilância Epidemiológica)
-
-## Instituto Evandro Chagas (Genótipos/Sorotipos)
-
-## Instituto Adolfo Lutz (Genótipos/Sorotipos)
-
-## GenBank (Sequências Genéticas)
-
-## GISAID (Sequências Genômicas)
-
-## Fiocruz (Vigilância Genômica)
-
-## LACENs (Análise de Amostras Virais)
 
 ## PAHO (Vigilância Molecular)
 
