@@ -47,7 +47,7 @@ def loop_download_anos(
 
     for ano in tqdm(lista_anos):
         falhas = []
-        filename = f'{prefixo}{str(ano)}.{extensao}'
+        filename = f'{prefixo}{str(ano)}{extensao}'
         filename_path = os.path.join(diretorio_download, filename)
         url = f'{link}{filename}'
         
@@ -60,7 +60,6 @@ def loop_download_anos(
             falhas.append((filename, url))
     return falhas
 
-
 def loop_download_anos_estados(
         inicio: int, fim: int,
         diretorio_download: str,
@@ -68,7 +67,9 @@ def loop_download_anos_estados(
         prefixo: str,
         extensao: str,
         lista_estados: list,
-        ftp: bool = True) -> list:
+        ftp: bool = True,
+        texto_adicional_pre_ano: str = "",
+        texto_adicional_pos_ano: str = "") -> list:
     
     """
     Faz o download por ano e estado de arquivos por ftp ou http
@@ -76,13 +77,14 @@ def loop_download_anos_estados(
     """
     falhas_estados = []
     for estado in lista_estados:
-        tmp_prefixo = prefixo + estado +"20"
+        tmp_prefixo = prefixo + estado +texto_adicional_pre_ano
+        tmp_extensao =  texto_adicional_pos_ano + extensao
 
         falhas = loop_download_anos(inicio=inicio, fim=fim,
         diretorio_download=diretorio_download,
         link=link,
         prefixo=tmp_prefixo,
-        extensao=extensao,
+        extensao=tmp_extensao,
         ftp=ftp)
 
         falhas_estados.append((estado, falhas))

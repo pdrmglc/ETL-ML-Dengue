@@ -21,6 +21,10 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 Calcular a menor distância entre duas cidades: uma que apresentou detecção de um sorotipo e outra que não. (o quão provável é que os casos desse município tenham sido por causa desse sorotipo/genótipo?). Haverá uma coluna para cada sorotipo/genótipo de interesse para cada mês passado.
 
+Distância rodoviária - Implementada
+
+Distância de haversine - Pendente
+
 ### Metadados de genótipo/local/data de coleta
 
 **OBS:** parece que não há como automatizar essa parte sem usar webscrap
@@ -35,14 +39,6 @@ https://zenodo.org/records/11400243
 
 https://www.ibge.gov.br/explica/codigos-dos-municipios.php
 
-# Dados a serem coletados
-
-## SIH (Hospitalizações)
-
-Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
-
-## CNES
-
 ## INMET (Clima)
 Provavelmente não terão todos os municípios.
 Como lidar?
@@ -51,7 +47,56 @@ Dados a nível de alguns municípios e por hora
 https://portal.inmet.gov.br/dadoshistoricos
 https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
-## E-SUS VE (Vigilância Epidemiológica)
+## MapBiomas (Uso do Solo)
+
+Dados anuais por município
+Difícil de automatizar a coleta posterior
+
+## SISVAN (Nutrição)
+
+Dados são grandes demais para continuar
+
+## CNES
+
+### ST
+
+
+#### Estabelecimentos
+
+Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
+
+
+### PF
+
+#### Profissionais
+
+Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
+
+### EQ
+
+#### Equipamentos
+
+Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
+
+
+# Dados a serem coletados
+
+## SIH (Hospitalizações)
+
+Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
+
+## LIRAa (Infestação)
+
+## Google Mobility Reports
+
+## Cadastro Único (Vulnerabilidade Socioeconômica)
+
+## Faturamento por município
+
+## Investimento em saúde?
+
+
+<!-- ## E-SUS VE (Vigilância Epidemiológica)
 
 ## Instituto Evandro Chagas (Genótipos/Sorotipos)
 
@@ -61,37 +106,23 @@ https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
 ## Fiocruz (Vigilância Genômica)
 
-## LACENs (Análise de Amostras Virais)
+## LACENs (Análise de Amostras Virais) -->
 
-## Redes Sociais (Sentimento Público)
+<!-- ## Redes Sociais (Sentimento Público) -->
 
-## LIRAa (Infestação)
+<!-- ## Google trends -->
 
-## Google trends
+<!-- ## Google Analytics (Tendências de Busca) -->
 
-## Google Analytics (Tendências de Busca)
-
-## Google Mobility Reports
-
-## MapBiomas (Uso do Solo)
-
-## INPE (Desmatamento e Queimadas)
-
-## Cadastro Único (Vulnerabilidade Socioeconômica)
-
-## PNAD (Condições de Vida)
+<!-- ## INPE (Desmatamento e Queimadas) -->
 
 
+<!-- ## PNAD (Condições de Vida) -->
 
-## Faturamento por município
+<!-- ## Investimento em lazer -->
 
-## Investimento em saúde?
+<!-- ## SISAB (Atenção Básica) -->
 
-## Investimento em lazer
-
-## SISAB (Atenção Básica)
-
-
-## PAHO (Vigilância Molecular)
+<!-- ## PAHO (Vigilância Molecular) -->
 
 
