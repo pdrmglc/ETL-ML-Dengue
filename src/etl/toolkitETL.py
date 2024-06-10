@@ -7,6 +7,11 @@ import shutil
 import pandas as pd
 from dbfread import DBF
 import subprocess
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+import numpy as np
+from math import radians, sin, cos, sqrt, atan2
+
 
 
 
@@ -149,6 +154,7 @@ def convert_dbf_to_csv(diretorio_dbf: str, diretorio_csv: str) -> None:
                 df.to_csv(caminho_csv, index=False, encoding='utf-8')
             
 def run_r_script_dbc2csv(input_dir: str, output_dir: str, r_script_path: str) -> None:
+
     # Caminho para o script R
     r_script_path = r_script_path
     
@@ -162,3 +168,82 @@ def run_r_script_dbc2csv(input_dir: str, output_dir: str, r_script_path: str) ->
     print(result.stdout)
     if result.returncode != 0:
         print(result.stderr)
+
+def get_estado(valor):
+    local_separado = valor.split(" / ")
+    if len(local_separado) > 2:
+        return local_separado[2].strip()
+    else:
+        return pd.NA
+
+def get_municipio(valor):
+    local_separado = valor.split(" / ")
+    if len(local_separado) > 3:
+        return local_separado[3].strip()
+    else:
+        return pd.NA
+
+def get_distancia_mais_proxima_sorotipo_genotipo(df_dist: pd.DataFrame, df_tratado_metadados: pd.DataFrame, ano: int, mes: int, cod_municipio: int,
+                                                 genotipo: str, sorotipo: str, subtracao_mes: int) -> int:
+    
+    novo_ano, novo_mes = subtrair_meses(ano, mes, subtracao_mes)
+    
+    tmp_df = df_tratado_metadados[
+        (df_tratado_metadados['Ano'] == novo_ano) &
+        (df_tratado_metadados['Mes'] == novo_mes) &
+        (df_tratado_metadados['Serotype'] == sorotipo) &
+        (df_tratado_metadados['Genotype'] == genotipo)].copy()
+            
+    lista_municipios_dengue = tmp_df['Código Município Completo'].unique()
+
+    min_dist = float('inf')
+
+    for municipio in lista_municipios_dengue:
+        if municipio == cod_municipio:
+            min_dist = 0
+            return min_dist
+        if (municipio in df_dist['orig'].values):
+            if cod_municipio in df_dist[(df_dist['orig'] == municipio)]['dest'].values:
+                tmp_valor = df_dist[(df_dist['orig'] == cod_municipio) & (df_dist['dest'] == municipio)]['dist'].values
+                if len(tmp_valor) < 1:
+                    continue
+                tmp_valor = tmp_valor[0]
+                if tmp_valor < min_dist:
+                    min_dist = tmp_valor
+            else:
+                if (municipio in df_dist['dest'].values):
+                    if cod_municipio in df_dist[(df_dist['dest'] == municipio)]['orig'].values:
+                        tmp_valor = df_dist[(df_dist['dest'] == municipio) & (df_dist['orig'] == cod_municipio)]['dist'].values
+                        if len(tmp_valor) < 1:
+                            continue
+                        tmp_valor = tmp_valor[0]
+                        if tmp_valor < min_dist:
+                            min_dist = tmp_valor
+                    else:
+                        print(f'município {cod_municipio} não encontrado', lista_municipios_dengue)
+                        return pd.NA
+    if min_dist == float('inf'):
+        return pd.NA
+    return min_dist
+
+def subtrair_meses(ano: int, mes: int, X: int):
+    data = datetime(ano, mes, 1)
+
+    nova_data = data-relativedelta(months=X)
+
+    novo_ano = nova_data.year
+    novo_mes = nova_data.month
+    
+    return novo_ano, novo_mes
+
+def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    # Converter de graus para radianos
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    # Fórmula de Haversine
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    # Raio da Terra em km (use 6371 para km, 3956 para milhas)
+    r = 6371
+    return c * r
