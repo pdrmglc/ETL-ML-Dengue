@@ -11,6 +11,12 @@ Dados a nível de indivíduo, podendo ser agregados por município e semana ou m
 
 ##  IBGE (Demografia)
 
+### PIB
+
+Dados a nível de município e ano
+
+### População
+
 Dados a nível de município e ano
 
 ## SIM (Mortalidade)
@@ -24,6 +30,8 @@ Calcular a menor distância entre duas cidades: uma que apresentou detecção de
 Distância rodoviária - Implementada
 
 Distância de haversine - Pendente
+
+https://github.com/kelvins/municipios-brasileiros
 
 ### Metadados de genótipo/local/data de coleta
 
@@ -78,7 +86,7 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
 
-
+<!-- 
 # Dados a serem coletados
 
 ## SIH (Hospitalizações)
@@ -91,12 +99,9 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 ## Cadastro Único (Vulnerabilidade Socioeconômica)
 
-## Faturamento por município
-
 ## Investimento em saúde?
 
-
-<!-- ## E-SUS VE (Vigilância Epidemiológica)
+## E-SUS VE (Vigilância Epidemiológica)
 
 ## Instituto Evandro Chagas (Genótipos/Sorotipos)
 
@@ -108,21 +113,20 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 ## LACENs (Análise de Amostras Virais) -->
 
-<!-- ## Redes Sociais (Sentimento Público) -->
+## Redes Sociais (Sentimento Público)
 
-<!-- ## Google trends -->
+## Google trends
 
-<!-- ## Google Analytics (Tendências de Busca) -->
+## Google Analytics (Tendências de Busca)
 
-<!-- ## INPE (Desmatamento e Queimadas) -->
+## INPE (Desmatamento e Queimadas)
 
+## PNAD (Condições de Vida)
 
-<!-- ## PNAD (Condições de Vida) -->
+## Investimento em lazer
 
-<!-- ## Investimento em lazer -->
+## SISAB (Atenção Básica)
 
-<!-- ## SISAB (Atenção Básica) -->
+## PAHO (Vigilância Molecular)
 
-<!-- ## PAHO (Vigilância Molecular) -->
-
-
+ -->
