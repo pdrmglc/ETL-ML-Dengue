@@ -27,9 +27,9 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 Calcular a menor distância entre duas cidades: uma que apresentou detecção de um sorotipo e outra que não. (o quão provável é que os casos desse município tenham sido por causa desse sorotipo/genótipo?). Haverá uma coluna para cada sorotipo/genótipo de interesse para cada mês passado.
 
-Distância rodoviária - Implementada
+Distância rodoviária
 
-Distância de haversine - Pendente
+Distância de haversine
 
 https://github.com/kelvins/municipios-brasileiros
 
