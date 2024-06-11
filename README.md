@@ -111,7 +111,7 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 ## Fiocruz (Vigilância Genômica)
 
-## LACENs (Análise de Amostras Virais) -->
+## LACENs (Análise de Amostras Virais)
 
 ## Redes Sociais (Sentimento Público)
 
@@ -127,6 +127,5 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 ## SISAB (Atenção Básica)
 
-## PAHO (Vigilância Molecular)
+## PAHO (Vigilância Molecular) -->
 
- -->
