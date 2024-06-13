@@ -34,25 +34,25 @@ def conectar_banco(caminho_dotenv: str) -> Tuple[cursor, connection]:
 
 def inserir_no_banco(
         cursor: cursor, conn: connection, caminho_arquivo: str,
-        nome_tabela: str, delimiter: str, add_id: bool,
+        nome_tabela: str, delimiter: str,
         diretorio_dotenv: str, encoding: str = 'utf-8') -> None:
 
     # Abrir o arquivo delimitado
     with open(caminho_arquivo, 'r', encoding=encoding) as f:
         reader = csv.reader(f, delimiter=delimiter)
         colunas = next(reader)  # Lê o cabeçalho do arquivo
+        colunas = [f"{coluna}" for coluna in colunas]
 
         # Se add_id for True, não incluímos a coluna de ID autoincremental
-        if not add_id:
-            colunas_str = ', '.join(colunas)
-        else:
-            colunas_str = 'id, ' + ', '.join(colunas)  # Adiciona 'id' como a primeira coluna
-
+        
+        colunas_str = ', '.join(colunas)
         placeholders = ', '.join(['%s'] * len(colunas))
+            
 
         # Inserir cada linha do arquivo na tabela
         for row in reader:
             row = [None if campo == '' else campo for campo in row]
+
             try:
                 if cursor.closed:
                     cursor, conn = conectar_banco(diretorio_dotenv)
