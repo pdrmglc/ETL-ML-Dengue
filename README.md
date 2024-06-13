@@ -1,5 +1,5 @@
 # ETL-ML-Dengue
-Repositório destinado à tratamento de dados do relacionados à saúde e desenvolvimento de um modelo de ML para previsão de casos de Dengue no Brasil
+Repositório destinado ao tratamento de dados do relacionados à saúde e desenvolvimento de um modelo de ML para previsão de casos de Dengue no Brasil
 
 # Schema do banco de dados
 
