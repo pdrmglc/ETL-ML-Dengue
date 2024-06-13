@@ -1,6 +1,12 @@
 # ETL-ML-Dengue
 Repositório destinado à tratamento de dados do IBGE e desenvolvimento de um modelo de ML para previsão de casos de Dengue no Brasil
 
+# Schema do banco de dados
+
+<div align="center">
+  <img src="https://github.com/pdrmglc/ETL-ML-Dengue/blob/main/img/postgres%20-%20public.png" alt="schema">
+</div>
+
 # Coleta de dados
 
 Os dados foram coletados a partir da base de dados unificada TabNet
