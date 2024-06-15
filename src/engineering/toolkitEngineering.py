@@ -5,6 +5,7 @@ import psycopg2
 from psycopg2.extensions import cursor, connection
 from psycopg2 import errors
 import csv
+import numpy as np
 
 
 def conectar_banco(caminho_dotenv: str) -> Tuple[cursor, connection]:
@@ -74,3 +75,9 @@ def inserir_no_banco(
     # Fechar o cursor e a conexão
     cursor.close()
     conn.close()
+
+def aplicar_decoficador(valor, coluna, colunas_decodificar):
+    if valor in colunas_decodificar[coluna].keys():
+        return colunas_decodificar[coluna][valor]
+    else:
+        return np.nan

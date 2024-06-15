@@ -239,6 +239,7 @@ def subtrair_meses(ano: int, mes: int, X: int):
     return novo_ano, novo_mes
 
 def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+
     # Converter de graus para radianos
     lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
     # Fórmula de Haversine
@@ -249,3 +250,32 @@ def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> fl
     # Raio da Terra em km (use 6371 para km, 3956 para milhas)
     r = 6371
     return c * r
+
+
+def chamar_script_r_microsus(ano_inicio, mes_inicio, ano_fim, mes_fim, uf, banco, diretorio_saida, diretorio_script_r):
+    # Gerar um nome de arquivo único baseado nos parâmetros
+    nome_arquivo = f"{ano_inicio}_{mes_inicio}_{ano_fim}_{mes_fim}_{uf}_{banco}.csv"
+    caminho_saida = f"{diretorio_saida}/{nome_arquivo}"
+    
+    # Construir a lista de argumentos
+    args = [
+        "Rscript", diretorio_script_r,
+        str(ano_inicio),
+        str(mes_inicio),
+        str(ano_fim),
+        str(mes_fim),
+        uf,
+        banco,
+        caminho_saida
+    ]
+    
+    # Chamar o script R usando subprocess
+    result = subprocess.run(args, capture_output=True, text=True)
+    
+    # Checar se houve algum erro
+    if result.returncode != 0:
+        print(f"Erro ao executar o script R: {result.stderr}")
+    else:
+        print(f"Script R executado com sucesso: {result.stdout}")
+        print(f"Arquivo salvo em: {caminho_saida}")
+
