@@ -11,7 +11,7 @@ CREATE TABLE "sim" (
 	"dtnasc" date,
 	"idade" varchar(3),
 	"idade_anos" float,
-	"sexo" varchar(1),
+	"sexo" varchar(10),
 	"racacor" varchar(8),
 	"estciv" varchar(8),
 	"esc" varchar(20),

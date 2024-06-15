@@ -92,6 +92,10 @@ Dados a nível de indivíduo, podendo ser agregado por município e semana ou m�
 
 Dados a nível de indivíduo, podendo ser agregado por município e semana ou mês
 
+# Desafios
+
+1. Dicionário de dados de dengue dispersos. Não possuem todas as colunas num só.
+
 <!-- 
 # Dados a serem coletados
 
