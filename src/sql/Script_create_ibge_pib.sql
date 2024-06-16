@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "Ibge_pib";
+DROP TABLE IF EXISTS "ibge_pib";
 
 CREATE TABLE "ibge_pib" (
     "ano_notificacao" VARCHAR(4) NOT NULL,

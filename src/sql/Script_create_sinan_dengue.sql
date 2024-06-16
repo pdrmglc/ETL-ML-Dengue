@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS "sinan_dengue";
 
 CREATE TABLE sinan_dengue (
-	sinan_id SERIAL,
+    sinan_id SERIAL,
     classi_fin VARCHAR(50),
     dt_notific DATE,
     nu_ano VARCHAR(4),
@@ -108,5 +108,7 @@ CREATE TABLE sinan_dengue (
     resul_prnt VARCHAR(20),
     res_chiks1 VARCHAR(20),
     res_chiks2 VARCHAR(20),
-    PRIMARY KEY ("sinan_id")
+    PRIMARY KEY ("sinan_id"),
+    CONSTRAINT fk_sinan_dengue_ibge_pib FOREIGN KEY ("id_municip", "nu_ano") REFERENCES "ibge_pib" ("codigo_municipio", "ano_notificacao"),
+    CONSTRAINT fk_sinan_dengue_ibge_pop FOREIGN KEY ("id_municip", "nu_ano") REFERENCES "ibge_pop" ("munic_res", "ano")
 );
