@@ -57,7 +57,7 @@ https://www.ibge.gov.br/explica/codigos-dos-municipios.php
 Provavelmente não terão todos os municípios.
 Como lidar?
 Dados a nível de alguns municípios e por hora
-
+https://github.com/tbrugz/geodata-br
 https://portal.inmet.gov.br/dadoshistoricos
 https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
