@@ -54,10 +54,12 @@ https://zenodo.org/records/11400243
 https://www.ibge.gov.br/explica/codigos-dos-municipios.php
 
 ## INMET (Clima)
-Provavelmente não terão todos os municípios.
-Como lidar?
+Metodologia:
+Para os dados nulos dos municípios, foi escolhida a abordagem de se calcular a mediana das variáveis por estado, mês e ano
+
 Dados a nível de alguns municípios e por hora
 https://github.com/tbrugz/geodata-br
+
 https://portal.inmet.gov.br/dadoshistoricos
 https://portal.inmet.gov.br/uploads/dadoshistoricos/2010.zip
 
