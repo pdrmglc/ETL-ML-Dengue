@@ -51,12 +51,11 @@ def loop_download_anos(
 
     lista_anos = intervalo_anos(inicio=inicio, fim=fim)
 
-    for ano in tqdm(lista_anos):
+    for ano in tqdm(lista_anos, leave=False):
         falhas = []
         filename = f'{prefixo}{str(ano)}{extensao}'
         filename_path = os.path.join(diretorio_download, filename)
-        url = f'{link}{filename}'
-        
+        url = f'{link}{filename}'        
         if not os.path.exists(filename_path):
             if ftp:
                 baixar_arquivos_ftp(url=url, filename=filename_path)

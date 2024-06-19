@@ -58,6 +58,7 @@ Metodologia:
 Para os dados nulos dos municípios, foi escolhida a abordagem de se calcular a mediana das variáveis por estado, mês e ano
 
 Dados a nível de alguns municípios e por hora
+
 https://github.com/tbrugz/geodata-br
 
 https://portal.inmet.gov.br/dadoshistoricos
