@@ -10,7 +10,7 @@ convert_dbc_to_csv <- function(dbc_file, output_dir) {
   
   # Checar se o arquivo .csv já existe
   if (file.exists(csv_file)) {
-    message(paste("Arquivo", csv_file, "já existe. Pulando a conversão."))
+    print(paste("Arquivo", csv_file, "já existe. Pulando a conversão."))
     return()
   }
   
@@ -19,7 +19,7 @@ convert_dbc_to_csv <- function(dbc_file, output_dir) {
   
   # Salvar o data frame como .csv
   write.csv(data, csv_file, row.names = FALSE)
-  message(paste("Convertido:", dbc_file, "para", csv_file))
+  print(paste("Convertido:", dbc_file, "para", csv_file))
 }
 
 # Função principal que será chamada a partir do Python
@@ -34,7 +34,7 @@ main <- function(input_dir, output_dir) {
 
   # Percorrer e converter cada arquivo .dbc
   for (dbc_file in dbc_files) {
-    print(dbc_file)
+    # print(dbc_file)
     convert_dbc_to_csv(dbc_file, output_dir)
   }
 }

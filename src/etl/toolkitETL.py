@@ -168,8 +168,6 @@ def run_r_script_dbc2csv(input_dir: str, output_dir: str, r_script_path: str) ->
     # Comando para chamar o script R com argumentos
     command = ["Rscript", r_script_path, input_dir, output_dir]
     
-    print(command)
-
     # Executa o comando
     result = subprocess.run(command, capture_output=True, text=True)
     
