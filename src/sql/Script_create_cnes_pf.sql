@@ -15,6 +15,6 @@ CREATE TABLE "cnes_pf" (
     "horahosp" INT, 
     "hora_amb" INT, 
     "competen" VARCHAR(6),
-    "nome" VARCHAR(100),
+    "nome_cargo" VARCHAR(100),
     PRIMARY KEY ("cnes_pf_id")
 );

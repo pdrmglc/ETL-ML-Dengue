@@ -5,6 +5,8 @@ library(read.dbc)
 convert_dbc_to_csv <- function(dbc_file, output_dir) {
   # Criar o nome do arquivo .csv de saída
   csv_file <- file.path(output_dir, paste0(tools::file_path_sans_ext(basename(dbc_file)), ".csv"))
+
+  
   
   # Checar se o arquivo .csv já existe
   if (file.exists(csv_file)) {
@@ -32,6 +34,7 @@ main <- function(input_dir, output_dir) {
 
   # Percorrer e converter cada arquivo .dbc
   for (dbc_file in dbc_files) {
+    print(dbc_file)
     convert_dbc_to_csv(dbc_file, output_dir)
   }
 }
