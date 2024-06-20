@@ -6,3 +6,6 @@ INSERT INTO agrupado.teste (munic_res, media_pop)
 SELECT ip.munic_res, AVG(ip.populacao) AS media_populacao
 FROM public.ibge_pop ip
 GROUP BY ip.munic_res;
+
+
+select count(i.inmet_id) from public.inmet i;
