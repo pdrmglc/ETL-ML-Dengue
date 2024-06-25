@@ -8,4 +8,5 @@ FROM public.ibge_pop ip
 GROUP BY ip.munic_res;
 
 
-select count(i.inmet_id) from public.inmet i;
+select s.nu_ano, count(s.nu_ano) from public.sinan_dengue s
+group by s.nu_ano;

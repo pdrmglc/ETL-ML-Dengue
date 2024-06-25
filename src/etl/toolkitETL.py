@@ -166,7 +166,8 @@ def run_r_script_dbc2csv(input_dir: str, output_dir: str, r_script_path: str) ->
     r_script_path = r_script_path
     
     # Comando para chamar o script R com argumentos
-    command = ["Rscript", r_script_path, input_dir, output_dir]
+    command = ["C:\\Users\\REDE GENOMICA CEARA\\AppData\\Local\\Programs\\R\\R-4.3.3\\bin\\Rscript", r_script_path, input_dir, output_dir]
+    # command = ["Rscript", r_script_path, input_dir, output_dir]
     
     # Executa o comando
     result = subprocess.run(command, capture_output=True, text=True)
@@ -292,8 +293,8 @@ def conectar_banco(caminho_dotenv: str) -> Tuple[cursor, connection]:
 
     # Configurar as credenciais Postgres
     db_user = os.getenv('DB_USER')
-    db_password = os.getenv('DB_PASSWORD')
-    db_host = os.getenv('DB_HOST')
+    db_password = os.getenv('DB_PASSWORD_HELPER')
+    db_host = os.getenv('DB_HOST_HELPER')
     db_port = os.getenv('DB_PORT')
     db_name = os.getenv('DB_NAME')
 
