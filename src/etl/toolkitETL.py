@@ -55,7 +55,8 @@ def loop_download_anos(
         falhas = []
         filename = f'{prefixo}{str(ano)}{extensao}'
         filename_path = os.path.join(diretorio_download, filename)
-        url = f'{link}{filename}'        
+        url = f'{link}{filename}'
+        print(url)     
         if not os.path.exists(filename_path):
             if ftp:
                 baixar_arquivos_ftp(url=url, filename=filename_path)
