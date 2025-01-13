@@ -15,3 +15,5 @@ group by s.nu_ano;
 select sim.codigo_municipio, sim.nu_mes, sim.nu_ano, count(sim.dtobito) as num_obitos from public.sim sim
 group by sim.codigo_municipio, sim.nu_mes, sim.nu_ano
 order by num_obitos desc;
+
+
