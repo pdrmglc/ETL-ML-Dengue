@@ -1,5 +1,6 @@
-select ip.munic_res, avg(populacao) from public.ibge_pop ip
-group by ip.munic_res;
+select ip.munic_res, ip.ano, avg(populacao) from public.ibge_pop ip
+where ip.munic_res = '230440'
+group by ip.munic_res, ip.ano;
 
 
 INSERT INTO agrupado.teste (munic_res, media_pop)
@@ -8,4 +9,9 @@ FROM public.ibge_pop ip
 GROUP BY ip.munic_res;
 
 
-select count(i.inmet_id) from public.inmet i;
+select s.nu_ano, count(s.nu_ano) from public.sinan_dengue s
+group by s.nu_ano;
+
+select sim.codigo_municipio, sim.nu_mes, sim.nu_ano, count(sim.dtobito) as num_obitos from public.sim sim
+group by sim.codigo_municipio, sim.nu_mes, sim.nu_ano
+order by num_obitos desc;
